@@ -10,10 +10,12 @@ library(RCurl)
 library(tidyverse)
 library(ggrepel)
 
+#!!!CHANGE FILE PATHS BELOW TO MATCH WHERE YOU PUT THE DATA FOLDER!!!
+
 #import coefficients from bivariate Poisson estimated in Stata
-coefficients = read_excel("C:/Users/Craig/Dropbox/MLS/Leagues Cup/data/output/coefficients.xls")
+coefficients = read_excel("C:/Users/.../data/output/coefficients.xls")
 #made excel file of logos by hand. Links to Wiki.
-logos = read_excel("C:/Users/Craig/Dropbox/MLS/Leagues Cup/data/raw/logos.xlsx")
+logos = read_excel("C:/Users/.../data/raw/logos.xlsx")
 
 coefficients=coefficients %>%
   left_join(logos, by=c("hid"="team"))
