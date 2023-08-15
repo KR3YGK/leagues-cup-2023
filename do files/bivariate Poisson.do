@@ -2,7 +2,8 @@
 *(2) bivariate Poisson.do <-- you are here
 *(3) bar chart.R
 
-global dir_output="C:\Users\Craig\Dropbox\MLS\Leagues Cup\data\output"
+*!!!CHANGE FILE PATH NAME TO MATCH WHERE YOU PUT DATA FOLDER!!!
+global dir_output="C:\Users\...\data\output"
 
 use "$dir_output\game data.dta", replace
 
