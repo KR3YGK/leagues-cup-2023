@@ -1,7 +1,7 @@
 # leagues-cup-2023
 Analysis of Leagues Cup 2023 in Stata/R
 
-#Order of Operations
+# Order of Operations
 To reproduce the results of my SubStackm article "Comparable Rankings of MLS and Liga MX Teams" (still in draft as of this README.md draft), follow this order of operations
 
 1. Create subfolder within the "data" folder called "output". This is where all your output will be saved.
