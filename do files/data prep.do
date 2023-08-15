@@ -2,8 +2,9 @@
 *(2) bivariate Poisson.do
 *(3) bar chart.R
 
-global dir_raw="C:\Users\Craig\Dropbox\MLS\Leagues Cup\data\raw"
-global dir_output="C:\Users\Craig\Dropbox\MLS\Leagues Cup\data\output"
+*!!!CHANGE THESE FILE PATHS TO MATCH WHERE YOU PUT DATA FOLDER!!!
+global dir_raw="C:\Users...\data\raw"
+global dir_output="C:\Users...\data\output"
 
 *****
 *MLS*
