@@ -6,7 +6,7 @@ To reproduce the results of my SubStackm article "Comparable Rankings of MLS and
 
 1. Creat work folder with subfolder titled "data". 
 2. Create subfolder within the "data" folder called "output". This is where all your output will be saved.
-3. Create subfolder within the "data" folder called "raw"
+3. Create subfolder within the "data" folder called "raw". This is where your raw inputs will be saved.
 4. Put all data inputs into the "raw" subfolder. These include
      i. MLS.dta
     ii. Liga MX.dta
