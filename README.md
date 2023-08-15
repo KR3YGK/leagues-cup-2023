@@ -8,11 +8,17 @@ To reproduce the results of my SubStackm article "Comparable Rankings of MLS and
 2. Create subfolder within the "data" folder called "output". This is where all your output will be saved.
 3. Create subfolder within the "data" folder called "raw". This is where your raw inputs will be saved.
 4. Put all data inputs into the "raw" subfolder. These include
-     i. MLS.dta
-    ii. Liga MX.dta
-   iii. Leagues Cup.xlsx
-    iv. logos.xlsx
-     v. the "logos" folder containing all team logo image files
+   
+   (a) MLS.dta
+   
+   (b) Liga MX.dta
+   
+   (c) Leagues Cup.xlsx
+   
+   (d) logos.xlsx
+   
+   (e) the "logos" folder containing all team logo image files
+   
 6. run data prep.do in Stata
 7. run bivariate Poisson.do in Stata
 8. run bar chart.R in R
