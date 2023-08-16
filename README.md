@@ -25,16 +25,16 @@ The subfolder "output" is where all output (data and images) will be saved. The 
 
 # do files
 
-Contains both do-files (data prep.do and bivariate Poisson.do) needed to estimate team strength parameters and create match outcome probability charts for matches between the top teams in MLS and Liga MX.
+Contains both do-files (_data prep.do_ and _bivariate Poisson.do_) needed to estimate team strength parameters and create match outcome probability charts for matches between the top teams in MLS and Liga MX.
 
 # R files
 
-Contains the R script (bar chart) that creates the rankings of teams as horizontal bar charts using team logos.
+Contains the R script (_bar chart.R_) that creates the rankings of teams as horizontal bar charts using team logos.
 
 # Order of Operations
 To reproduce the results of my SubStackm article "Comparable Rankings of MLS and Liga MX Teams" (still in draft as of this README.md draft), follow this order of operations
    
-1. run data prep.do in Stata (change file paths to location of data folder on your computer)
-2. run bivariate Poisson.do in Stata (change file paths to location of data folder on your computer)
-3. run bar chart.R in R (change file paths to location of data folder on your computer)
+1. run _data prep.do_ in Stata (change file paths to location of data folder on your computer)
+2. run _bivariate Poisson.do_ in Stata (change file paths to location of data folder on your computer)
+3. run _bar chart.R_ in R (change file paths to location of data folder on your computer)
 4. Let me know if you have any issues with steps 1-8
