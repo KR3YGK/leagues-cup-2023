@@ -125,7 +125,7 @@ bysort league (ncoef): gen rank=_n
 
 
 decode hid, gen(team)
-keep team rank
+keep team rank league
 merge 1:1 team using `teamid', assert(3) 
 drop _merge
 
@@ -255,22 +255,36 @@ forval x=0/`g_max'{
 	sum cum_pr
 	assert(abs(r(min)-1)<1e-5)		
 
+************************ 
+*Comparing median teams*
+************************
 
-*get top team in MLS and Liga MX
-levelsof hid if rank==1, local(best)
+
+*get median team from each league. ceil() takes better team of 2 median teams 
+*if odd # of teams in league
+sum rank if league=="MX"
+local MX_med=ceil(r(max)/2)
+
+sum rank if league=="MLS"
+local MLS_med=ceil(r(max)/2)
+
+
+
+levelsof hid if (rank==`MX_med' & league=="MX") | (rank==`MLS_med' & league=="MLS"), local(median)
 gen team1=0
 gen team2=0
 
+
 local i=0
-foreach b of local best{
+foreach team of local median{
     local i=`i'+1
 	
 	if `i'==1{
-	    replace team1=(hid==`b' | aid==`b')
+	    replace team1=(hid==`team' | aid==`team')
 	}
 
 	if `i'==2{
-	    replace team2=(hid==`b' | aid==`b')
+	    replace team2=(hid==`team' | aid==`team')
 	}
 }
 
@@ -322,13 +336,14 @@ forval g1=`g_max'(-1)0{
 }
 
 
-*convert data to matrix (display only 4 goals for readibility)
-mkmat hg0-hg4 if hid==`t1' & ag<=4, matrix(M1) rownames(ag)
-mkmat hg0-hg4 if hid==`t2' & ag<=4, matrix(M2) rownames(ag)
+*convert data to matrix (display only 5 goals for readibility) 
+*change to hg4 and ag<=4  to reproduce first chart in article
+mkmat hg0-hg5 if hid==`t1' & ag<=5, matrix(M1) rownames(ag)
+mkmat hg0-hg5 if hid==`t2' & ag<=5, matrix(M2) rownames(ag)
 
 *change column names for heatmap
-matrix colnames M1=0 1 2 3 4
-matrix colnames M2=0 1 2 3 4
+matrix colnames M1=0 1 2 3 4 5
+matrix colnames M2=0 1 2 3 4 5
 
 *transpose one so that the same teams are on the x/y-axis
 matrix M2=M2'
@@ -344,6 +359,3 @@ graph export "$dir_output/`vl2' at `vl1'.jpg", as(jpg) name("Graph") quality(100
 
 heatplot M2, levels(4) values(format(%9.2f) size(large)) colors(#1d91c0 #41b6c4  #a1dab4 #ffffcc ) legend(off) xlab(,nogrid) ylab(,nogrid) xtitle("`vl1'") ytitle("`vl2'") title(  "Outcome Probabilities" "(`vl1' at `vl2')")
 graph export "$dir_output/`vl1' at `vl2'.jpg", as(jpg) name("Graph") quality(100) replace
-
-
-
