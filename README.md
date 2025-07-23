@@ -53,4 +53,4 @@ To reproduce the results of my SubStackm article "Comparable Rankings of MLS and
 1. run _data prep.do_ in Stata (change file paths to location of data folder on your computer)
 2. run _bivariate Poisson.do_ in Stata (change file paths to location of data folder on your computer)
 3. run _bar chart.R_ in R (change file paths to location of data folder on your computer)
-4. Let me know if you have any issues with steps 1-8
+4. Let me know if you have any issues with steps 1-3
